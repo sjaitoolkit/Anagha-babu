@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16050c">
+<title>Happy Birthday Anagha ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap');
+
+:root {
+  --pink: #ff6b9a;
+  --rose: #ff315f;
+  --gold: #ffd99b;
+  --bg: #16050c;
+  --card: #29101c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, #481326 0%, transparent 60%),
+    linear-gradient(160deg, #16050c, #260a18, #10040a);
+  color: #fff4f6;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 28px 18px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  animation: appear .7s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  margin-bottom: 16px;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(34px, 10vw, 54px);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(27px, 7vw, 38px);
+  line-height: 1.3;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+  color: #ffabc4;
+}
+
+.subtitle {
+  color: #e9cbd5;
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 330px;
+  margin: 16px auto 0;
+}
+
+.heart {
+  display: inline-block;
+  color: var(--pink);
+  animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.13); }
+}
+
+.btn {
+  display: inline-block;
+  color: white;
+  background: linear-gradient(135deg, #ff6998, #e52d65);
+  padding: 13px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 8px 4px 0;
+  box-shadow: 0 6px 24px #ff315f30;
+  transition: transform .2s;
+}
+
+.btn:active {
+  transform: scale(.96);
+}
+
+.btn.secondary {
+  background: #452033;
+  border: 1px solid #a44d70;
+  box-shadow: none;
+}
+
+.btn.gold {
+  background: linear-gradient(135deg, #ffe0a6, #bd8245);
+  color: #32131d;
+}
+
+.heart-icon {
+  font-size: 48px;
+  margin-bottom: 22px;
+}
+
+.small-note {
+  color: #c6a5b2;
+  font-size: 11px;
+  margin-top: 18px;
+}
+
+/* Password */
+
+.lock-icon {
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+
+.password-box {
+  width: 100%;
+  max-width: 310px;
+  margin-top: 25px;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #351525;
+  border: 1px solid #754052;
+  color: white;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.password-box input:focus {
+  border-color: var(--pink);
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #e7b6c8;
+  margin: 0 0 10px;
+}
+
+.error {
+  color: #ff9db7;
+  font-size: 12px;
+  min-height: 20px;
+  margin-top: 10px;
+}
+
+/* Slideshow */
+
+.slide-frame {
+  width: min(82vw, 350px);
+  aspect-ratio: 3 / 4;
+  position: relative;
+  margin: 22px auto 0;
+  padding: 7px;
+  border-radius: 20px;
+  border: 1px solid #e88da9;
+  background: linear-gradient(145deg, #532039, #1b0a13);
+  box-shadow: 0 0 35px #ff477d20;
+  overflow: hidden;
+}
+
+.slide-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #10060b;
+  opacity: 1;
+  transition: opacity .35s ease;
+}
+
+.slide-frame img.fade {
+  opacity: 0;
+}
+
+.slide-count {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 17px;
+}
+
+.caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(23px, 6vw, 30px);
+  color: #ffb3ca;
+  margin: 12px 0 4px;
+  min-height: 38px;
+}
+
+.countdown {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #14050deF;
+  font-family: 'Playfair Display', serif;
+  font-size: 90px;
+  color: var(--gold);
+  text-shadow: 0 0 35px #ff477d;
+}
+
+.countdown.show {
+  display: flex;
+  animation: appear .25s ease;
+}
+
+.controls {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.controls.show {
+  display: flex;
+}
+
+.progress-track {
+  width: min(80vw, 330px);
+  height: 3px;
+  background: #4c2636;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink), var(--gold));
+}
+
+/* Letter */
+
+.letter-card {
+  max-width: 420px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 26px 22px;
+  background: linear-gradient(145deg, #321322, #210b16);
+  border: 1px solid #794054;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px #0003;
+  text-align: left;
+}
+
+.letter-card p {
+  font-size: 13px;
+  line-height: 2;
+  color: #f1dbe2;
+  margin-bottom: 15px;
+}
+
+.letter-card .salutation {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #ffabc4;
+}
+
+.signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 27px;
+  color: var(--gold);
+  text-align: right;
+  margin-top: 18px;
+}
+
+/* Final page */
+
+.couple-frame {
+  width: min(82vw, 340px);
+  aspect-ratio: 3 / 4;
+  padding: 7px;
+  margin: 22px auto;
+  border-radius: 20px;
+  border: 1px solid var(--gold);
+  background: linear-gradient(145deg, #ffe0a6, #a53e65, #351020);
+  box-shadow: 0 0 35px #ff477d25;
+}
+
+.couple-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #10060b;
+}
+
+.final-wish {
+  font-size: 13px;
+  color: #f3d4df;
+  line-height: 2;
+  max-width: 350px;
+  margin: 16px auto;
+}
+
+.final-title {
+  font-size: clamp(31px, 9vw, 46px);
+  color: #ffabc4;
+}
+
+.footer {
+  color: #b68b9c;
+  font-size: 10px;
+  margin-top: 22px;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .35;
+  animation: floatUp 8s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .4; }
+  100% { transform: translateY(-115vh) rotate(40deg); opacity: 0; }
+}
+
+@media (min-width: 600px) {
+  .page { padding: 40px 24px; }
+  .letter-card { padding: 32px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: WELCOME -->
+<section class="page active" id="welcome">
+  <div class="heart-icon">💌</div>
+  <div class="eyebrow">A little surprise for someone special</div>
+  <h1>Hey,<br><span class="script">Anagha</span> <span class="heart">♥</span></h1>
+  <p class="subtitle">
+    Someone who means the world to me deserves
+    something as beautiful as her.
+    <br><br>
+    Today, this little world is all about you. 🌹
+  </p>
+  <button class="btn" onclick="showPage('password')">
+    Open Your Surprise ♡
+  </button>
+  <p class="small-note">Made with love, just for you ✨</p>
+</section>
+
+<!-- PAGE 2: PASSWORD -->
+<section class="page" id="password">
+  <div class="lock-icon">🔐</div>
+  <div class="eyebrow">A little secret between us</div>
+  <h2>Only for <span class="script">you</span> ❤️</h2>
+  <p class="subtitle">Enter the password to unlock your surprise.</p>
+
+  <form class="password-box" onsubmit="unlock(event)">
+    <input
+      id="pass"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="off"
+      required
+    >
+    <label class="show-password">
+      <input type="checkbox" onchange="togglePassword(this)">
+      Show password
+    </label>
+    <button class="btn" type="submit">Unlock My Heart ♥</button>
+    <p class="error" id="error"></p>
+  </form>
+</section>
+
+<!-- PAGE 3: INTRO -->
+<section class="page" id="intro">
+  <div class="heart-icon">🌹</div>
+  <div class="eyebrow">Today is all about you</div>
+  <h1>Happy Birthday,<br><span class="script">Beautiful</span></h1>
+  <p class="subtitle">
+    Five little moments, a thousand feelings,
+    and one girl who makes life more beautiful.
+    <br><br>
+    Ready to see your little surprise? ❤️
+  </p>
+  <button class="btn" onclick="beginSlideshow()">Start Our Moments ♡</button>
+</section>
+
+<!-- PAGE 4: SLIDESHOW -->
+<section class="page" id="slideshow">
+  <div class="eyebrow">Every picture tells a feeling</div>
+  <h2>My favourite <span class="script">girl</span> 💗</h2>
+
+  <div class="slide-frame">
+    <img id="slideImage" src="photos/photo1.jpg"
+         alt="Anagha's photo">
+    <div class="countdown" id="countdown">3</div>
+  </div>
+
+  <div class="slide-count" id="slideCount">01 / 05</div>
+  <div class="caption" id="caption">My favourite person ❤️</div>
+
+  <div class="progress-track">
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <p class="subtitle" id="slideNote">
+    If I could keep one moment forever, it would be one with you.
+  </p>
+
+  <div class="controls" id="slideControls">
+    <button class="btn secondary" onclick="replaySlideshow()">↺ Replay</button>
+    <button class="btn" onclick="showPage('letter')">Continue ♡</button>
+  </div>
+</section>
+
+<!-- PAGE 5: LOVE LETTER -->
+<section class="page" id="letter">
+  <div class="eyebrow">From my heart to yours</div>
+  <h2>A letter for <span class="script">you</span> 💌</h2>
+
+  <div class="letter-card">
+    <p class="salutation">My dearest Anagha, ❤️</p>
+
+    <p>
+      Happy Birthday to the girl who holds such a special
+      place in my heart. If there is one thing I wish for
+      you today, it is a lifetime filled with happiness,
+      peace, beautiful memories and reasons to smile.
+    </p>
+
+    <p>
+      You make ordinary moments feel special, and your
+      smile is one of those little things that can make
+      a difficult day feel lighter. I hope you always
+      see yourself the way I see you — beautiful,
+      precious and truly one of a kind.
+    </p>
+
+    <p>
+      I may not always find the perfect words to explain
+      what you mean to me, but I hope my love makes you
+      feel appreciated, safe and cared for. I want to
+      celebrate your happiest days, stand beside you
+      through the difficult ones, and make more memories
+      with you as time goes by.
+    </p>
+
+    <p>
+      On your birthday, I wish that every dream you hold
+      close to your heart finds its way to you. Keep
+      smiling, keep shining, and never forget how special
+      you are to me.
+    </p>
+
+    <p>
+      Thank you for being you, Anagha. No birthday
+      message could ever hold all the feelings I have
+      for you, but every word here comes from my heart.
+    </p>
+
+    <p class="salutation">Happy Birthday, my love! 💋</p>
+
+    <div class="signature">
+      Forever yours,<br>Adarsh ❤️
+    </div>
+  </div>
+
+  <button class="btn gold" onclick="showPage('final')">
+    One Last Surprise ✨
+  </button>
+</section>
+
+<!-- PAGE 6: FINAL SURPRISE -->
+<section class="page" id="final">
+  <div class="eyebrow">My favourite person, today and always</div>
+  <h1 class="final-title">Happy Birthday,<br>My Love ❤️</h1>
+
+  <div class="couple-frame">
+    <img src="photos/couple.jpg"
+         alt="Anagha and Adarsh together">
+  </div>
+
+  <p class="script" style="font-size:30px;">
+    Anagha & Adarsh
+  </p>
+
+  <p class="final-wish">
+    You are my favourite hello, my sweetest memories,
+    and a beautiful part of my world. 🥹❤️
+    <br><br>
+    May your life be filled with endless happiness,
+    your heart with peace, and your days with all the
+    love you deserve.
+    <br><br>
+    No matter how many birthdays pass, I will always
+    wish for your smile, your dreams and your happiness.
+    Thank you for being you.
+    <br><br>
+    <strong>Today is your day, my love. Keep shining,
+    keep smiling, and remember that you are deeply loved. ❤️</strong>
+  </p>
+
+  <h2 class="script">I love you, Anagha. 💋</h2>
+  <p class="subtitle">With all my love — Adarsh 🌹</p>
+
+  <p class="footer">Made with love, just for you ♡</p>
+
+  <button class="btn secondary" onclick="restartWebsite()">
+    ↺ Relive the Surprise
+  </button>
+</section>
+
+<script>
+const PASSWORD = "anaghaadarsh";
+
+const slides = [
+  {
+    image: "photos/photo1.jpg",
+    caption: "My favourite person ❤️",
+    note: "Your smile makes everything feel brighter."
+  },
+  {
+    image: "photos/photo2.jpg",
+    caption: "Simply beautiful 🌹",
+    note: "There is something special about you that words cannot explain."
+  },
+  {
+    image: "photos/photo3.jpg",
+    caption: "My happy place 💗",
+    note: "Some people make life more beautiful just by being in it."
+  },
+  {
+    image: "photos/photo4.jpg",
+    caption: "A heart full of love 🥹",
+    note: "If I could save a feeling forever, it would be this one."
+  },
+  {
+    image: "photos/photo5.jpg",
+    caption: "Always my favourite girl 💋",
+    note: "One beautiful girl, countless reasons to smile."
+  }
+];
+
+let currentSlide = 0;
+let slideTimer = null;
+let countdownTimer = null;
+let slideStartedAt = 0;
+let slideshowRun = 0;
+let heartTimer = null;
+
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (id === "welcome" || id === "final") {
+    startHearts();
+  } else {
+    stopHearts();
+  }
+}
+
+function unlock(event) {
+  event.preventDefault();
+
+  const entered = document.getElementById("pass").value
+    .trim().toLowerCase();
+
+  if (entered === PASSWORD) {
+    document.getElementById("error").textContent = "";
+    document.getElementById("pass").value = "";
+    showPage("intro");
+  } else {
+    document.getElementById("error").textContent =
+      "That password doesn't match. Try again ❤️";
+  }
+}
+
+function togglePassword(checkbox) {
+  document.getElementById("pass").type =
+    checkbox.checked ? "text" : "password";
+}
+
+function clearSlideshowTimers() {
+  clearTimeout(slideTimer);
+  clearInterval(countdownTimer);
+  slideTimer = null;
+  countdownTimer = null;
+}
+
+function beginSlideshow() {
+  clearSlideshowTimers();
+  slideshowRun++;
+  currentSlide = 0;
+
+  showPage("slideshow");
+
+  document.getElementById("slideControls").classList.remove("show");
+  document.getElementById("countdown").classList.add("show");
+  document.getElementById("countdown").textContent = "3";
+  document.getElementById("progress").style.width = "0%";
+
+  let number = 3;
+  const thisRun = slideshowRun;
+
+  countdownTimer = setInterval(() => {
+    if (thisRun !== slideshowRun) return;
+
+    number--;
+
+    if (number > 0) {
+      document.getElementById("countdown").textContent = number;
+    } else {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      document.getElementById("countdown").classList.remove("show");
+      showSlide(0, thisRun);
+    }
+  }, 1000);
+}
+
+function showSlide(index, thisRun) {
+  if (thisRun !== slideshowRun) return;
+
+  const image = document.getElementById("slideImage");
+  const slide = slides[index];
+
+  image.classList.add("fade");
+
+  setTimeout(() => {
+    if (thisRun !== slideshowRun) return;
+
+    image.src = slide.image;
+    image.alt = "Anagha's photo " + (index + 1);
+
+    document.getElementById("caption").textContent = slide.caption;
+    document.getElementById("slideNote").textContent = slide.note;
+    document.getElementById("slideCount").textContent =
+      String(index + 1).padStart(2, "0") + " / 05";
+
+    image.classList.remove("fade");
+
+    currentSlide = index;
+    slideStartedAt = Date.now();
+
+    const progress = document.getElementById("progress");
+    progress.style.transition = "none";
+    progress.style.width = "0%";
+
+    requestAnimationFrame(() => {
+      if (thisRun !== slideshowRun) return;
+      progress.style.transition = "width 3s linear";
+      progress.style.width = "100%";
+    });
+
+    clearTimeout(slideTimer);
+
+    slideTimer = setTimeout(() => {
+      if (thisRun !== slideshowRun) return;
+
+      if (index < slides.length - 1) {
+        showSlide(index + 1, thisRun);
+      } else {
+        finishSlideshow(thisRun);
+      }
+    }, 3000);
+  }, 250);
+}
+
+function finishSlideshow(thisRun) {
+  if (thisRun !== slideshowRun) return;
+
+  clearTimeout(slideTimer);
+  slideTimer = null;
+
+  document.getElementById("slideControls").classList.add("show");
+  document.getElementById("slideNote").textContent =
+    "Five little moments, one very special girl. Happy Birthday, Anagha! ❤️";
+}
+
+function replaySlideshow() {
+  beginSlideshow();
+}
+
+function restartWebsite() {
+  clearSlideshowTimers();
+  slideshowRun++;
+  showPage("welcome");
+}
+
+function startHearts() {
+  stopHearts();
+
+  heartTimer = setInterval(() => {
+    if (!document.getElementById("welcome").classList.contains("active") &&
+        !document.getElementById("final").classList.contains("active")) {
+      return;
+    }
+
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = ["♥", "♡", "💗", "✨"][
+      Math.floor(Math.random() * 4)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }, 650);
+}
+
+function stopHearts() {
+  clearInterval(heartTimer);
+  heartTimer = null;
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    clearTimeout(slideTimer);
+    clearInterval(countdownTimer);
+  }
+});
+</script>
+
+</body>
+</html>
